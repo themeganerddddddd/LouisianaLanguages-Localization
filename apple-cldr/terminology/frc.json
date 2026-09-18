@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "languageCode": "frc",
+    "status": "draft",
+    "reviewedBy": [],
+    "lastReviewed": ""
+  },
+  "terms": {
+    "Apple Account": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Airplane Mode": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Wi-Fi": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Bluetooth": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Cellular": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Battery": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "General": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Accessibility": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Privacy & Security": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Notifications": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Language & Region": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Keyboard": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Date & Time": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Messages": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Phone": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Mail": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Photos": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Calendar": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Safari": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Notes": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    },
+    "Weather": {
+      "preferred": "",
+      "alternatives": [],
+      "notes": ""
+    }
+  }
+}

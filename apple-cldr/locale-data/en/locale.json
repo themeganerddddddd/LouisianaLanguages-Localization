@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "languageCode": "en",
+    "languageNameEnglish": "English",
+    "autonym": "English",
+    "region": "Louisiana, United States",
+    "script": "Latin",
+    "textDirection": "ltr",
+    "status": "reference",
+    "lastReviewed": "",
+    "reviewedBy": []
+  },
+  "identity": {
+    "languageName": "",
+    "languageNameInLanguage": "",
+    "regionName": "",
+    "peopleName": ""
+  },
+  "characters": {
+    "standardAlphabet": [],
+    "additionalLetters": [],
+    "diacriticsUsed": [],
+    "exampleCharacters": "",
+    "notes": ""
+  },
+  "punctuation": {
+    "quotationMarks": {
+      "primaryOpen": "",
+      "primaryClose": "",
+      "secondaryOpen": "",
+      "secondaryClose": ""
+    },
+    "apostrophe": "",
+    "ellipsis": "…",
+    "decimalSeparator": "",
+    "groupingSeparator": ""
+  },
+  "dates": {
+    "shortDatePattern": "",
+    "mediumDatePattern": "",
+    "longDatePattern": "",
+    "firstDayOfWeek": "",
+    "months": {
+      "wide": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "abbreviated": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "weekdays": {
+      "wide": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "abbreviated": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "am": "",
+    "pm": "",
+    "uses24HourClockByDefault": null,
+    "notes": ""
+  },
+  "numbers": {
+    "decimalExample": "",
+    "groupedNumberExample": "",
+    "percentPattern": "",
+    "minusSign": "-",
+    "plusSign": "+",
+    "notes": ""
+  },
+  "currency": {
+    "primaryCurrency": "USD",
+    "symbol": "$",
+    "positivePattern": "",
+    "negativePattern": "",
+    "example": ""
+  },
+  "plurals": {
+    "categoriesUsed": [],
+    "rulesDescription": "",
+    "examples": {}
+  },
+  "measurement": {
+    "defaultSystem": "US",
+    "temperatureUnit": "",
+    "notes": ""
+  },
+  "systemTerms": {
+    "settings": "",
+    "general": "",
+    "languageAndRegion": "",
+    "keyboard": "",
+    "accessibility": "",
+    "privacyAndSecurity": "",
+    "notifications": "",
+    "dateAndTime": "",
+    "about": "",
+    "cancel": "",
+    "done": "",
+    "back": "",
+    "search": "",
+    "edit": "",
+    "save": "",
+    "delete": ""
+  },
+  "review": {
+    "openQuestions": [],
+    "regionalVariants": [],
+    "sources": []
+  }
+}

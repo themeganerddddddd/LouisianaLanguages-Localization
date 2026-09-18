@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Louisiana Languages — iOS Localization Preview</title>
+  <meta name="description" content="A community translation editor for previewing Kouri-Vini and Louisiana French across iOS-style screens." />
+  <style>
+:root{--bg:#eef2f7;--panel:#fff;--ink:#111827;--muted:#667085;--line:#d9e0e9;--blue:#0a84ff;--blue2:#0066cc;--green:#34c759;--red:#d92d20;--phone:#f2f2f7;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.08)}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,textarea{font:inherit}.topbar{min-height:122px;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(20px)}.eyebrow,.mini-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#667085}.topbar h1{font-size:27px;margin:3px 0 4px}.topbar p{margin:0;color:var(--muted);font-size:14px}.top-actions{display:flex;gap:10px}.primary,.secondary{border:0;border-radius:11px;padding:10px 15px;font-weight:750;cursor:pointer}.primary{background:var(--blue);color:white}.secondary{background:#eef4fb;color:#174a7c}.workspace{display:grid;grid-template-columns:280px minmax(420px,1fr) 330px;gap:18px;padding:18px;min-height:calc(100vh - 122px)}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar,.editor{padding:16px;position:sticky;top:140px;height:calc(100vh - 158px);overflow:auto}.language-block label,.editor label{display:block;font-size:12px;font-weight:800;color:#475467;margin-bottom:7px}.segmented,.preview-mode{background:#edf1f5;padding:3px;border-radius:10px;display:flex}.segmented button,.preview-mode button{flex:1;border:0;background:transparent;padding:8px;border-radius:8px;color:#475467;font-weight:700;cursor:pointer}.segmented button.active,.preview-mode button.active{background:white;color:#111827;box-shadow:0 1px 4px rgba(0,0,0,.09)}.progress-line{margin-top:14px;font-size:12px;color:var(--muted)}.progress-track{height:6px;background:#e6ebf1;border-radius:99px;margin-top:7px;overflow:hidden}.progress-track>div{height:100%;width:0;background:var(--green);transition:width .2s}.search-wrap{margin:18px 0 10px}.search-wrap input{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 12px;background:#f8fafc;outline:none}.nav-group{margin-top:14px}.nav-group-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#98a2b3;font-weight:800;margin:0 8px 6px}.screen-button{width:100%;border:0;background:transparent;text-align:left;border-radius:10px;padding:9px 10px;margin:2px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#344054}.screen-button:hover{background:#f5f7fa}.screen-button.active{background:#eaf4ff;color:#005eb8;font-weight:800}.screen-button small{color:#98a2b3}.sidebar-note{font-size:12px;color:#667085;background:#f8fafc;border:1px solid #eaecf0;border-radius:12px;padding:12px;margin-top:18px;display:grid;gap:5px}.preview-column{min-width:0}.preview-toolbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;max-width:680px;margin:0 auto 14px}.preview-toolbar>div:first-child{display:flex;gap:8px;align-items:center}.preview-mode{width:180px}.phone-wrap{display:flex;justify-content:center;padding:4px 0 40px}.phone{position:relative;width:390px;height:804px;border:10px solid #121212;border-radius:52px;background:var(--phone);box-shadow:0 22px 70px rgba(15,23,42,.25);overflow:hidden}.phone-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:118px;height:31px;border-radius:18px;background:#070707;z-index:5}.statusbar{height:52px;padding:15px 24px 0;display:flex;justify-content:space-between;font-size:12px;font-weight:750;background:var(--phone)}.phone-screen{height:calc(100% - 52px);overflow:auto;padding-bottom:34px;background:var(--phone)}.home-indicator{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);height:5px;width:130px;background:#111;border-radius:99px}.ios-nav{height:52px;position:sticky;top:0;z-index:3;background:rgba(242,242,247,.93);backdrop-filter:blur(16px);display:grid;grid-template-columns:90px 1fr 90px;align-items:center;padding:0 10px}.ios-back{color:var(--blue);font-size:14px;cursor:pointer}.ios-nav-title{text-align:center;font-weight:750}.ios-action{text-align:right;color:var(--blue);font-size:14px}.large-title{font-size:34px;font-weight:800;padding:7px 20px 5px}.ios-search{margin:4px 16px 14px;padding:8px 12px;background:#e3e3e8;border-radius:11px;color:#7a7a80;font-size:14px}.ios-group{margin:12px 15px 22px}.ios-header{font-size:11px;text-transform:uppercase;color:#6d6d72;margin:0 12px 6px}.ios-card{background:white;border-radius:11px;overflow:hidden}.ios-row{min-height:47px;padding:9px 12px;display:flex;align-items:center;gap:10px;position:relative}.ios-row+.ios-row:before{content:"";position:absolute;left:45px;right:0;top:0;height:1px;background:#e5e5ea}.ios-icon{width:28px;height:28px;border-radius:7px;background:#e9eef5;display:grid;place-items:center;font-size:15px;flex:0 0 28px}.ios-label{flex:1;font-size:15px}.ios-value{font-size:14px;color:#8e8e93;white-space:nowrap}.chevron{color:#c7c7cc;font-size:20px}.toggle{width:43px;height:25px;border-radius:99px;background:#d1d1d6;padding:2px;display:flex;justify-content:flex-start}.toggle.on{background:#34c759;justify-content:flex-end}.toggle:after{content:"";width:21px;height:21px;border-radius:50%;background:white;box-shadow:0 1px 3px rgba(0,0,0,.2)}.translatable{outline:2px solid transparent;outline-offset:2px;border-radius:5px;cursor:pointer}.translatable:hover,.translatable.selected{outline-color:rgba(10,132,255,.5);background:#eaf5ff}.missing{box-shadow:inset 0 -2px 0 #0a84ff}.app-body{padding:0 16px 80px}.app-title{font-size:34px;font-weight:800;margin:7px 4px 12px}.app-card{background:white;border-radius:14px;overflow:hidden}.app-line{padding:13px 14px;border-bottom:1px solid #eee;font-size:16px}.app-line:last-child{border-bottom:0}.tabbar{position:absolute;left:0;right:0;bottom:15px;height:60px;background:rgba(250,250,250,.94);border-top:1px solid #ddd;display:flex;justify-content:space-around;padding-top:8px}.tabitem{font-size:10px;text-align:center;color:#6b7280}.tabitem span{display:block;font-size:19px;margin-bottom:2px}.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.photo{aspect-ratio:1;background:linear-gradient(145deg,#c7ddf6,#7bb2ec);display:grid;place-items:center;font-size:25px}.weather-hero{text-align:center;padding:30px 0 20px;color:white;background:linear-gradient(#5c9fe8,#94c8ef);margin:0 -16px 18px}.weather-temp{font-size:72px;font-weight:200}.editor-empty{height:62%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#667085}.editor-empty h2{color:#344054;font-size:19px;margin:8px 0}.editor-empty p{font-size:13px;max-width:230px}.empty-icon{font-size:30px}.hidden{display:none!important}.field-meta{display:flex;gap:7px;margin-bottom:9px}.chip,.status-chip{font-size:11px;padding:5px 8px;border-radius:99px;background:#eef2f6;color:#475467;font-weight:750}.status-chip{background:#fff4e5;color:#9a5800}.status-chip.saved{background:#e8f7ee;color:#18794e}.key-line{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#98a2b3;margin-bottom:20px;word-break:break-all}.source-box{border:1px solid var(--line);background:#f8fafc;border-radius:10px;padding:11px 12px;margin-bottom:18px;font-size:15px}.editor textarea{width:100%;resize:vertical;border:1px solid #b9c4d1;border-radius:10px;padding:11px;outline:none;font-size:15px}.editor textarea:focus{border-color:#0a84ff;box-shadow:0 0 0 3px rgba(10,132,255,.12)}.helper{font-size:11px;color:#98a2b3;line-height:1.4}.editor-actions{display:flex;gap:8px;margin-top:13px}.editor-actions button{flex:1}.link-button,.danger-link{border:0;background:none;color:#0878d1;font-weight:700;cursor:pointer;padding:12px 0}.danger-link{color:#b42318;padding:0;font-size:12px}.draft-card{border-top:1px solid #eaecf0;margin-top:20px;padding-top:16px;display:flex;justify-content:space-between;align-items:center}.draft-card>div{display:grid;gap:3px}.draft-card strong{font-size:13px}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#101828;color:white;border-radius:10px;padding:10px 14px;box-shadow:var(--shadow);transition:.2s;z-index:99}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:1100px){.workspace{grid-template-columns:235px 1fr}.editor{position:fixed;right:18px;bottom:18px;top:auto;width:340px;height:auto;max-height:72vh;z-index:30}.editor-empty{min-height:220px}}@media(max-width:760px){.topbar{position:static;padding:17px;align-items:flex-start}.topbar h1{font-size:22px}.topbar p{display:none}.top-actions{flex-direction:column}.workspace{display:block;padding:10px}.sidebar{position:static;height:auto;margin-bottom:10px}.sidebar nav,.sidebar-note{display:none}.preview-toolbar{margin-bottom:8px}.phone{transform:scale(.84);transform-origin:top center;margin-bottom:-125px}.editor{position:static;width:auto;max-height:none;margin-top:12px}.editor-empty{min-height:180px}.segmented button{font-size:12px}}
+
+  </style>
+  <style>
+    .mobile-screen-picker{display:none;margin:12px 0 4px}
+    .mobile-screen-picker select{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 12px;background:#fff;color:var(--ink)}
+    .translation-legend{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:12px}
+    .translation-legend::before{content:"";width:18px;border-bottom:2px solid var(--blue)}
+    @media(max-width:760px){.sidebar nav{display:none}.sidebar-note{display:none}.mobile-screen-picker{display:block}.preview-toolbar{align-items:flex-start;gap:10px}.translation-legend{display:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">Louisiana Languages</div>
+      <h1>iOS Localization Preview</h1>
+      <p>Translate familiar iPhone screens visually. This is a community reference preview, not an Apple product.</p>
+    </div>
+    <div class="top-actions">
+      <button id="exportBtn" class="secondary">Export JSON</button>
+      <button id="submitBtn" class="primary">Submit draft</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="sidebar panel">
+      <div class="language-block">
+        <label>Translation language</label>
+        <div class="segmented" id="languageSwitcher">
+          <button data-lang="lou" class="active">Kouri-Vini</button>
+          <button data-lang="frc">Louisiana French</button>
+        </div>
+        <div class="progress-line">
+          <span id="progressText">0 / 0 translated</span>
+          <div class="progress-track"><div id="progressFill"></div></div>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <input id="screenSearch" placeholder="Search screens" aria-label="Search screens" />
+      </div>
+      <div class="mobile-screen-picker">
+        <label for="screenPicker">Reference screen</label>
+        <select id="screenPicker"></select>
+      </div>
+      <nav id="screenNav" aria-label="Screen list"></nav>
+      <div class="sidebar-note">
+        <strong>How this works</strong>
+        <span>Click any blue-highlighted label in the phone, translate it on the right, then save your draft.</span>
+      </div>
+    </aside>
+
+    <section class="preview-column">
+      <div class="preview-toolbar panel">
+        <div>
+          <span class="mini-label">Preview</span>
+          <strong id="screenName">Settings</strong>
+        </div>
+        <span class="translation-legend">Blue underline means untranslated; English is shown as a fallback.</span>
+        <div class="preview-mode">
+          <button id="targetMode" class="active">Translation</button>
+          <button id="englishMode">English</button>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone" aria-label="iPhone-style localization preview">
+          <div class="phone-island"></div>
+          <div class="statusbar"><span>9:41</span><span>◔ ᯤ ▰</span></div>
+          <div id="phoneScreen" class="phone-screen"></div>
+          <div class="home-indicator"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="editor panel">
+      <div class="editor-empty" id="editorEmpty">
+        <div class="empty-icon">✎</div>
+        <h2>Select text on the phone</h2>
+        <p>Click a highlighted label to translate it. The preview updates as you type.</p>
+      </div>
+      <div id="editorForm" class="editor-form hidden">
+        <div class="field-meta">
+          <span id="fieldScreen" class="chip">Settings</span>
+          <span id="fieldStatus" class="status-chip">Untranslated</span>
+        </div>
+        <div class="key-line" id="fieldKey">settings.title</div>
+
+        <label>English reference</label>
+        <div id="englishSource" class="source-box"></div>
+
+        <label id="targetLabel">Kouri-Vini translation</label>
+        <textarea id="translationInput" rows="4" placeholder="Type the native-speaker translation here"></textarea>
+        <p class="helper">Keep the wording concise enough to fit on a phone screen. Nothing is published automatically.</p>
+
+        <div class="editor-actions">
+          <button id="saveBtn" class="primary">Save draft</button>
+          <button id="clearBtn" class="secondary">Clear</button>
+        </div>
+        <button id="nextBtn" class="link-button">Next untranslated →</button>
+      </div>
+
+      <div class="draft-card">
+        <div>
+          <span class="mini-label">This browser</span>
+          <strong><span id="draftCount">0</span> draft changes</strong>
+        </div>
+        <button id="resetBtn" class="danger-link">Reset drafts</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+const EMBEDDED_ENGLISH = {"common": {"on": "On", "off": "Off"}, "settings": {"title": "Settings", "appleAccount": "Apple Account", "airplaneMode": "Airplane Mode", "wifi": "Wi‑Fi", "bluetooth": "Bluetooth", "cellular": "Cellular", "personalHotspot": "Personal Hotspot", "battery": "Battery", "general": "General", "accessibility": "Accessibility", "actionButton": "Action Button", "appearance": "Appearance", "camera": "Camera", "controlCenter": "Control Center", "notifications": "Notifications", "soundsHaptics": "Sounds & Haptics", "focus": "Focus", "screenTime": "Screen Time", "faceIdPasscode": "Face ID & Passcode", "emergencySOS": "Emergency SOS", "privacySecurity": "Privacy & Security", "walletApplePay": "Wallet & Apple Pay", "apps": "Apps"}, "general": {"title": "General", "about": "About", "softwareUpdate": "Software Update", "appleCareWarranty": "AppleCare & Warranty", "airdrop": "AirDrop", "airplayContinuity": "AirPlay & Continuity", "pictureInPicture": "Picture in Picture", "iphoneStorage": "iPhone Storage", "backgroundAppRefresh": "Background App Refresh", "dateTime": "Date & Time", "keyboard": "Keyboard", "fonts": "Fonts", "languageRegion": "Language & Region", "dictionary": "Dictionary", "vpnDeviceManagement": "VPN & Device Management", "transferReset": "Transfer or Reset iPhone"}, "languageRegion": {"title": "Language & Region", "preferredLanguages": "Preferred Languages", "primaryLanguage": "English", "addLanguage": "Add Language…", "region": "Region", "unitedStates": "United States", "calendar": "Calendar", "gregorian": "Gregorian", "temperature": "Temperature", "measurementSystem": "Measurement System", "firstDayWeek": "First Day of Week", "sunday": "Sunday", "dateFormat": "Date Format", "numberFormat": "Number Format", "liveText": "Live Text"}, "accessibility": {"title": "Accessibility", "vision": "Vision", "voiceOver": "VoiceOver", "zoom": "Zoom", "displayTextSize": "Display & Text Size", "motion": "Motion", "spokenContent": "Spoken Content", "audioDescriptions": "Audio Descriptions", "physicalMotor": "Physical and Motor", "touch": "Touch", "faceIdAttention": "Face ID & Attention", "switchControl": "Switch Control", "voiceControl": "Voice Control", "sideButton": "Side Button", "keyboardsTyping": "Keyboards & Typing", "hearing": "Hearing", "hearingDevices": "Hearing Devices", "soundRecognition": "Sound Recognition", "audioVisual": "Audio & Visual", "subtitlesCaptioning": "Subtitles & Captioning"}, "privacy": {"title": "Privacy & Security", "locationServices": "Location Services", "tracking": "Tracking", "contacts": "Contacts", "calendars": "Calendars", "reminders": "Reminders", "photos": "Photos", "bluetooth": "Bluetooth", "localNetwork": "Local Network", "microphone": "Microphone", "camera": "Camera", "analyticsImprovements": "Analytics & Improvements", "appleAdvertising": "Apple Advertising", "lockdownMode": "Lockdown Mode"}, "notifications": {"title": "Notifications", "scheduledSummary": "Scheduled Summary", "showPreviews": "Show Previews", "whenUnlocked": "When Unlocked", "screenSharing": "Screen Sharing", "notificationStyle": "Notification Style", "messages": "Messages", "mail": "Mail", "calendar": "Calendar", "bannersSoundsBadges": "Banners, Sounds, Badges", "bannersBadges": "Banners, Badges", "bannersSounds": "Banners, Sounds"}, "appearance": {"title": "Appearance", "appearance": "Appearance", "lightDark": "Light / Dark", "automatic": "Automatic", "textSize": "Text Size", "displayZoom": "Display Zoom", "default": "Default", "raiseToWake": "Raise to Wake", "autoLock": "Auto-Lock", "twoMinutes": "2 Minutes"}, "sounds": {"title": "Sounds & Haptics", "haptics": "Haptics", "ringtone": "Ringtone", "reflection": "Reflection", "textTone": "Text Tone", "note": "Note", "newVoicemail": "New Voicemail", "newMail": "New Mail", "sentMail": "Sent Mail", "calendarAlerts": "Calendar Alerts", "reminderAlerts": "Reminder Alerts", "keyboardFeedback": "Keyboard Feedback", "lockSound": "Lock Sound"}, "battery": {"title": "Battery", "percentage": "Battery Percentage", "lowPowerMode": "Low Power Mode", "healthCharging": "Battery Health & Charging", "usage": "Battery Usage", "last24Hours": "Last 24 Hours", "last10Days": "Last 10 Days"}, "keyboard": {"title": "Keyboard", "keyboards": "Keyboards", "textReplacement": "Text Replacement", "oneHanded": "One-Handed Keyboard", "autoCapitalization": "Auto-Capitalization", "autoCorrection": "Auto-Correction", "checkSpelling": "Check Spelling", "smartPunctuation": "Smart Punctuation", "slideToType": "Slide to Type", "deleteSlide": "Delete Slide-to-Type by Word", "characterPreview": "Character Preview", "periodShortcut": "“.” Shortcut"}, "messages": {"title": "Messages", "search": "Search", "newMessage": "New Message", "today": "Today", "yesterday": "Yesterday", "noMessages": "No Messages"}, "phone": {"title": "Phone", "favorites": "Favorites", "recents": "Recents", "contacts": "Contacts", "keypad": "Keypad", "voicemail": "Voicemail", "missed": "Missed", "all": "All"}, "mail": {"title": "Mail", "mailboxes": "Mailboxes", "inbox": "Inbox", "vip": "VIP", "flagged": "Flagged", "drafts": "Drafts", "sent": "Sent", "junk": "Junk", "trash": "Trash", "search": "Search"}, "photos": {"title": "Photos", "library": "Library", "collections": "Collections", "search": "Search", "years": "Years", "months": "Months", "all": "All", "select": "Select"}, "calendar": {"title": "Calendar", "today": "Today", "calendars": "Calendars", "inbox": "Inbox", "search": "Search", "addEvent": "Add Event"}, "safari": {"title": "Safari", "searchOrWebsite": "Search or enter website name", "startPage": "Start Page", "favorites": "Favorites", "privacyReport": "Privacy Report", "readingList": "Reading List", "recentlyClosed": "Recently Closed Tabs"}, "notes": {"title": "Notes", "folders": "Folders", "notes": "Notes", "quickNotes": "Quick Notes", "recentlyDeleted": "Recently Deleted", "search": "Search", "newNote": "New Note"}, "weather": {"title": "Weather", "myLocation": "My Location", "conditions": "Conditions", "hourlyForecast": "Hourly Forecast", "tenDayForecast": "10-Day Forecast", "feelsLike": "Feels Like", "humidity": "Humidity", "wind": "Wind", "visibility": "Visibility"}};
+const EMBEDDED_LOU = {"common": {"on": "", "off": ""}, "settings": {"title": "", "appleAccount": "", "airplaneMode": "", "wifi": "", "bluetooth": "", "cellular": "", "personalHotspot": "", "battery": "", "general": "", "accessibility": "", "actionButton": "", "appearance": "", "camera": "", "controlCenter": "", "notifications": "", "soundsHaptics": "", "focus": "", "screenTime": "", "faceIdPasscode": "", "emergencySOS": "", "privacySecurity": "", "walletApplePay": "", "apps": ""}, "general": {"title": "", "about": "", "softwareUpdate": "", "appleCareWarranty": "", "airdrop": "", "airplayContinuity": "", "pictureInPicture": "", "iphoneStorage": "", "backgroundAppRefresh": "", "dateTime": "", "keyboard": "", "fonts": "", "languageRegion": "", "dictionary": "", "vpnDeviceManagement": "", "transferReset": ""}, "languageRegion": {"title": "", "preferredLanguages": "", "primaryLanguage": "", "addLanguage": "", "region": "", "unitedStates": "", "calendar": "", "gregorian": "", "temperature": "", "measurementSystem": "", "firstDayWeek": "", "sunday": "", "dateFormat": "", "numberFormat": "", "liveText": ""}, "accessibility": {"title": "", "vision": "", "voiceOver": "", "zoom": "", "displayTextSize": "", "motion": "", "spokenContent": "", "audioDescriptions": "", "physicalMotor": "", "touch": "", "faceIdAttention": "", "switchControl": "", "voiceControl": "", "sideButton": "", "keyboardsTyping": "", "hearing": "", "hearingDevices": "", "soundRecognition": "", "audioVisual": "", "subtitlesCaptioning": ""}, "privacy": {"title": "", "locationServices": "", "tracking": "", "contacts": "", "calendars": "", "reminders": "", "photos": "", "bluetooth": "", "localNetwork": "", "microphone": "", "camera": "", "analyticsImprovements": "", "appleAdvertising": "", "lockdownMode": ""}, "notifications": {"title": "", "scheduledSummary": "", "showPreviews": "", "whenUnlocked": "", "screenSharing": "", "notificationStyle": "", "messages": "", "mail": "", "calendar": "", "bannersSoundsBadges": "", "bannersBadges": "", "bannersSounds": ""}, "appearance": {"title": "", "appearance": "", "lightDark": "", "automatic": "", "textSize": "", "displayZoom": "", "default": "", "raiseToWake": "", "autoLock": "", "twoMinutes": ""}, "sounds": {"title": "", "haptics": "", "ringtone": "", "reflection": "", "textTone": "", "note": "", "newVoicemail": "", "newMail": "", "sentMail": "", "calendarAlerts": "", "reminderAlerts": "", "keyboardFeedback": "", "lockSound": ""}, "battery": {"title": "", "percentage": "", "lowPowerMode": "", "healthCharging": "", "usage": "", "last24Hours": "", "last10Days": ""}, "keyboard": {"title": "", "keyboards": "", "textReplacement": "", "oneHanded": "", "autoCapitalization": "", "autoCorrection": "", "checkSpelling": "", "smartPunctuation": "", "slideToType": "", "deleteSlide": "", "characterPreview": "", "periodShortcut": ""}, "messages": {"title": "", "search": "", "newMessage": "", "today": "", "yesterday": "", "noMessages": ""}, "phone": {"title": "", "favorites": "", "recents": "", "contacts": "", "keypad": "", "voicemail": "", "missed": "", "all": ""}, "mail": {"title": "", "mailboxes": "", "inbox": "", "vip": "", "flagged": "", "drafts": "", "sent": "", "junk": "", "trash": "", "search": ""}, "photos": {"title": "", "library": "", "collections": "", "search": "", "years": "", "months": "", "all": "", "select": ""}, "calendar": {"title": "", "today": "", "calendars": "", "inbox": "", "search": "", "addEvent": ""}, "safari": {"title": "", "searchOrWebsite": "", "startPage": "", "favorites": "", "privacyReport": "", "readingList": "", "recentlyClosed": ""}, "notes": {"title": "", "folders": "", "notes": "", "quickNotes": "", "recentlyDeleted": "", "search": "", "newNote": ""}, "weather": {"title": "", "myLocation": "", "conditions": "", "hourlyForecast": "", "tenDayForecast": "", "feelsLike": "", "humidity": "", "wind": "", "visibility": ""}};
+const EMBEDDED_FRC = {"common": {"on": "", "off": ""}, "settings": {"title": "", "appleAccount": "", "airplaneMode": "", "wifi": "", "bluetooth": "", "cellular": "", "personalHotspot": "", "battery": "", "general": "", "accessibility": "", "actionButton": "", "appearance": "", "camera": "", "controlCenter": "", "notifications": "", "soundsHaptics": "", "focus": "", "screenTime": "", "faceIdPasscode": "", "emergencySOS": "", "privacySecurity": "", "walletApplePay": "", "apps": ""}, "general": {"title": "", "about": "", "softwareUpdate": "", "appleCareWarranty": "", "airdrop": "", "airplayContinuity": "", "pictureInPicture": "", "iphoneStorage": "", "backgroundAppRefresh": "", "dateTime": "", "keyboard": "", "fonts": "", "languageRegion": "", "dictionary": "", "vpnDeviceManagement": "", "transferReset": ""}, "languageRegion": {"title": "", "preferredLanguages": "", "primaryLanguage": "", "addLanguage": "", "region": "", "unitedStates": "", "calendar": "", "gregorian": "", "temperature": "", "measurementSystem": "", "firstDayWeek": "", "sunday": "", "dateFormat": "", "numberFormat": "", "liveText": ""}, "accessibility": {"title": "", "vision": "", "voiceOver": "", "zoom": "", "displayTextSize": "", "motion": "", "spokenContent": "", "audioDescriptions": "", "physicalMotor": "", "touch": "", "faceIdAttention": "", "switchControl": "", "voiceControl": "", "sideButton": "", "keyboardsTyping": "", "hearing": "", "hearingDevices": "", "soundRecognition": "", "audioVisual": "", "subtitlesCaptioning": ""}, "privacy": {"title": "", "locationServices": "", "tracking": "", "contacts": "", "calendars": "", "reminders": "", "photos": "", "bluetooth": "", "localNetwork": "", "microphone": "", "camera": "", "analyticsImprovements": "", "appleAdvertising": "", "lockdownMode": ""}, "notifications": {"title": "", "scheduledSummary": "", "showPreviews": "", "whenUnlocked": "", "screenSharing": "", "notificationStyle": "", "messages": "", "mail": "", "calendar": "", "bannersSoundsBadges": "", "bannersBadges": "", "bannersSounds": ""}, "appearance": {"title": "", "appearance": "", "lightDark": "", "automatic": "", "textSize": "", "displayZoom": "", "default": "", "raiseToWake": "", "autoLock": "", "twoMinutes": ""}, "sounds": {"title": "", "haptics": "", "ringtone": "", "reflection": "", "textTone": "", "note": "", "newVoicemail": "", "newMail": "", "sentMail": "", "calendarAlerts": "", "reminderAlerts": "", "keyboardFeedback": "", "lockSound": ""}, "battery": {"title": "", "percentage": "", "lowPowerMode": "", "healthCharging": "", "usage": "", "last24Hours": "", "last10Days": ""}, "keyboard": {"title": "", "keyboards": "", "textReplacement": "", "oneHanded": "", "autoCapitalization": "", "autoCorrection": "", "checkSpelling": "", "smartPunctuation": "", "slideToType": "", "deleteSlide": "", "characterPreview": "", "periodShortcut": ""}, "messages": {"title": "", "search": "", "newMessage": "", "today": "", "yesterday": "", "noMessages": ""}, "phone": {"title": "", "favorites": "", "recents": "", "contacts": "", "keypad": "", "voicemail": "", "missed": "", "all": ""}, "mail": {"title": "", "mailboxes": "", "inbox": "", "vip": "", "flagged": "", "drafts": "", "sent": "", "junk": "", "trash": "", "search": ""}, "photos": {"title": "", "library": "", "collections": "", "search": "", "years": "", "months": "", "all": "", "select": ""}, "calendar": {"title": "", "today": "", "calendars": "", "inbox": "", "search": "", "addEvent": ""}, "safari": {"title": "", "searchOrWebsite": "", "startPage": "", "favorites": "", "privacyReport": "", "readingList": "", "recentlyClosed": ""}, "notes": {"title": "", "folders": "", "notes": "", "quickNotes": "", "recentlyDeleted": "", "search": "", "newNote": ""}, "weather": {"title": "", "myLocation": "", "conditions": "", "hourlyForecast": "", "tenDayForecast": "", "feelsLike": "", "humidity": "", "wind": "", "visibility": ""}};
+const ADDED_ENGLISH = {
+  common: { search: 'Search' },
+  settings: { displayBrightness: 'Display & Brightness' },
+  controlCenter: {
+    title: 'Control Center', accessWithinApps: 'Access Within Apps',
+    includedControls: 'Included Controls', moreControls: 'More Controls', reset: 'Reset Control Center'
+  },
+  displayBrightness: {
+    title: 'Display & Brightness', appearance: 'Appearance', light: 'Light', dark: 'Dark',
+    automatic: 'Automatic', brightness: 'Brightness', trueTone: 'True Tone', nightShift: 'Night Shift',
+    textSize: 'Text Size', displayZoom: 'Display Zoom', autoLock: 'Auto-Lock', raiseToWake: 'Raise to Wake'
+  },
+  dateTime: {
+    title: 'Date & Time', setAutomatically: 'Set Automatically', timeZone: 'Time Zone',
+    twentyFourHourTime: '24-Hour Time', dateFormat: 'Date Format'
+  },
+  contacts: { title: 'Contacts', lists: 'Lists', search: 'Search', addContact: 'Add Contact', myCard: 'My Card', contacts: 'Contacts' },
+  cameraApp: { title: 'Camera', photo: 'Photo', video: 'Video', portrait: 'Portrait', cinematic: 'Cinematic', slowMotion: 'Slo-mo' },
+  maps: { title: 'Maps', search: 'Search Maps', directions: 'Directions', favorites: 'Favorites', recents: 'Recents', guides: 'Guides' },
+  remindersApp: { title: 'Reminders', today: 'Today', scheduled: 'Scheduled', all: 'All', flagged: 'Flagged', completed: 'Completed', myLists: 'My Lists' },
+  filesApp: { title: 'Files', browse: 'Browse', recents: 'Recents', shared: 'Shared', onMyIPhone: 'On My iPhone', iCloudDrive: 'iCloud Drive', downloads: 'Downloads' },
+  clock: { title: 'Clock', worldClock: 'World Clock', alarm: 'Alarm', stopwatch: 'Stopwatch', timer: 'Timer', sleep: 'Sleep' },
+  calculator: { title: 'Calculator', clear: 'Clear', percent: 'Percent', divide: 'Divide', multiply: 'Multiply', subtract: 'Subtract', add: 'Add', equals: 'Equals' },
+  appStore: { title: 'App Store', today: 'Today', games: 'Games', apps: 'Apps', arcade: 'Arcade', search: 'Search', updates: 'Updates' },
+  music: { title: 'Music', listenNow: 'Listen Now', browse: 'Browse', radio: 'Radio', library: 'Library', search: 'Search', playlists: 'Playlists' }
+};
+
+const REPO = 'themeganerddddddd/LouisianaLanguages-Localization';
+const LANGS = {
+  lou: { name: 'Kouri-Vini', file: 'ios/lou.json' },
+  frc: { name: 'Louisiana French', file: 'ios/frc.json' }
+};
+
+const screens = [
+  {id:'settings',category:'System',name:'Settings',kind:'settings',title:'settings.title',groups:[
+    [{k:'settings.appleAccount',i:'👤'}],
+    [{k:'settings.airplaneMode',i:'✈️',toggle:false},{k:'settings.wifi',i:'📶',v:'HomeWiFi'},{k:'settings.bluetooth',i:'ᛒ',vk:'common.on'},{k:'settings.cellular',i:'📡'},{k:'settings.personalHotspot',i:'🔗'}],
+    [{k:'settings.battery',i:'🔋',to:'battery'},{k:'settings.general',i:'⚙️',to:'general'},{k:'settings.accessibility',i:'◉',to:'accessibility'},{k:'settings.actionButton',i:'◌'},{k:'settings.appearance',i:'◐',to:'appearance'},{k:'settings.displayBrightness',i:'☀️',to:'displayBrightness'},{k:'settings.camera',i:'📷',to:'cameraApp'},{k:'settings.controlCenter',i:'◫',to:'controlCenter'}],
+    [{k:'settings.notifications',i:'🔔',to:'notifications'},{k:'settings.soundsHaptics',i:'🔊',to:'sounds'},{k:'settings.focus',i:'☾'},{k:'settings.screenTime',i:'⌛'}],
+    [{k:'settings.faceIdPasscode',i:'☺'},{k:'settings.emergencySOS',i:'🆘'},{k:'settings.privacySecurity',i:'✋',to:'privacy'},{k:'settings.walletApplePay',i:'💳'},{k:'settings.apps',i:'◻︎'}]
+  ]},
+  {id:'general',category:'System',name:'General',kind:'settings',title:'general.title',back:'settings',groups:[
+    [{k:'general.about'},{k:'general.softwareUpdate'},{k:'general.appleCareWarranty'}],
+    [{k:'general.airdrop'},{k:'general.airplayContinuity'},{k:'general.pictureInPicture'}],
+    [{k:'general.iphoneStorage'},{k:'general.backgroundAppRefresh'}],
+    [{k:'general.dateTime',to:'dateTime'},{k:'general.keyboard',to:'keyboard'},{k:'general.fonts'},{k:'general.languageRegion',to:'languageRegion'},{k:'general.dictionary'}],
+    [{k:'general.vpnDeviceManagement'},{k:'general.transferReset'}]
+  ]},
+  {id:'languageRegion',category:'System',name:'Language & Region',kind:'settings',title:'languageRegion.title',back:'general',groups:[
+    [{h:'languageRegion.preferredLanguages',k:'languageRegion.primaryLanguage',v:'English'},{k:'languageRegion.addLanguage',accent:true}],
+    [{k:'languageRegion.region',vk:'languageRegion.unitedStates'},{k:'languageRegion.calendar',vk:'languageRegion.gregorian'},{k:'languageRegion.temperature',v:'°F'},{k:'languageRegion.measurementSystem',v:'US'},{k:'languageRegion.firstDayWeek',vk:'languageRegion.sunday'},{k:'languageRegion.dateFormat',v:'9/18/26'},{k:'languageRegion.numberFormat',v:'1,234,567.89'}],
+    [{k:'languageRegion.liveText',toggle:true}]
+  ]},
+  {id:'accessibility',category:'System',name:'Accessibility',kind:'settings',title:'accessibility.title',back:'settings',groups:[
+    [{h:'accessibility.vision',k:'accessibility.voiceOver'},{k:'accessibility.zoom'},{k:'accessibility.displayTextSize'},{k:'accessibility.motion'},{k:'accessibility.spokenContent'},{k:'accessibility.audioDescriptions'}],
+    [{h:'accessibility.physicalMotor',k:'accessibility.touch'},{k:'accessibility.faceIdAttention'},{k:'accessibility.switchControl'},{k:'accessibility.voiceControl'},{k:'accessibility.sideButton'},{k:'accessibility.keyboardsTyping'}],
+    [{h:'accessibility.hearing',k:'accessibility.hearingDevices'},{k:'accessibility.soundRecognition'},{k:'accessibility.audioVisual'},{k:'accessibility.subtitlesCaptioning'}]
+  ]},
+  {id:'privacy',category:'System',name:'Privacy & Security',kind:'settings',title:'privacy.title',back:'settings',groups:[
+    [{k:'privacy.locationServices',vk:'common.on'},{k:'privacy.tracking'}],
+    [{k:'privacy.contacts'},{k:'privacy.calendars'},{k:'privacy.reminders'},{k:'privacy.photos'},{k:'privacy.bluetooth'},{k:'privacy.localNetwork'},{k:'privacy.microphone'},{k:'privacy.camera'}],
+    [{k:'privacy.analyticsImprovements'},{k:'privacy.appleAdvertising'},{k:'privacy.lockdownMode'}]
+  ]},
+  {id:'notifications',category:'System',name:'Notifications',kind:'settings',title:'notifications.title',back:'settings',groups:[
+    [{k:'notifications.scheduledSummary',vk:'common.off'},{k:'notifications.showPreviews',vk:'notifications.whenUnlocked'},{k:'notifications.screenSharing'}],
+    [{h:'notifications.notificationStyle',k:'notifications.messages',vk:'notifications.bannersSoundsBadges'},{k:'notifications.mail',vk:'notifications.bannersBadges'},{k:'notifications.calendar',vk:'notifications.bannersSounds'}]
+  ]},
+  {id:'appearance',category:'System',name:'Appearance',kind:'settings',title:'appearance.title',back:'settings',groups:[
+    [{k:'appearance.appearance',vk:'appearance.lightDark'},{k:'appearance.automatic',toggle:false}],
+    [{k:'appearance.textSize'},{k:'appearance.displayZoom',vk:'appearance.default'},{k:'appearance.raiseToWake',toggle:true},{k:'appearance.autoLock',vk:'appearance.twoMinutes'}]
+  ]},
+  {id:'sounds',category:'System',name:'Sounds & Haptics',kind:'settings',title:'sounds.title',back:'settings',groups:[
+    [{k:'sounds.haptics'},{k:'sounds.ringtone',vk:'sounds.reflection'},{k:'sounds.textTone',vk:'sounds.note'},{k:'sounds.newVoicemail'},{k:'sounds.newMail'},{k:'sounds.sentMail'},{k:'sounds.calendarAlerts'},{k:'sounds.reminderAlerts'}],
+    [{k:'sounds.keyboardFeedback'},{k:'sounds.lockSound',toggle:true}]
+  ]},
+  {id:'battery',category:'System',name:'Battery',kind:'settings',title:'battery.title',back:'settings',groups:[
+    [{k:'battery.percentage',toggle:true},{k:'battery.lowPowerMode',toggle:false}],
+    [{k:'battery.healthCharging'}],
+    [{h:'battery.usage',k:'battery.last24Hours',accent:true},{k:'battery.last10Days',accent:true}]
+  ]},
+  {id:'keyboard',category:'System',name:'Keyboard',kind:'settings',title:'keyboard.title',back:'general',groups:[
+    [{k:'keyboard.keyboards',v:'3'},{k:'keyboard.textReplacement'},{k:'keyboard.oneHanded'}],
+    [{k:'keyboard.autoCapitalization',toggle:true},{k:'keyboard.autoCorrection',toggle:true},{k:'keyboard.checkSpelling',toggle:true},{k:'keyboard.smartPunctuation',toggle:true},{k:'keyboard.slideToType',toggle:true},{k:'keyboard.deleteSlide',toggle:true},{k:'keyboard.characterPreview',toggle:true},{k:'keyboard.periodShortcut',toggle:true}]
+  ]},
+  {id:'controlCenter',category:'System',name:'Control Center',kind:'settings',title:'controlCenter.title',back:'settings',groups:[
+    [{k:'controlCenter.accessWithinApps',toggle:true}],
+    [{h:'controlCenter.includedControls',k:'controlCenter.reset',accent:true}],
+    [{h:'controlCenter.moreControls',k:'controlCenter.moreControls'}]
+  ]},
+  {id:'displayBrightness',category:'System',name:'Display & Brightness',kind:'settings',title:'displayBrightness.title',back:'settings',groups:[
+    [{h:'displayBrightness.appearance',k:'displayBrightness.light',accent:true},{k:'displayBrightness.dark',accent:true},{k:'displayBrightness.automatic',toggle:false}],
+    [{k:'displayBrightness.brightness'},{k:'displayBrightness.trueTone',toggle:true},{k:'displayBrightness.nightShift'}],
+    [{k:'displayBrightness.textSize'},{k:'displayBrightness.displayZoom'},{k:'displayBrightness.autoLock',v:'2 Minutes'},{k:'displayBrightness.raiseToWake',toggle:true}]
+  ]},
+  {id:'dateTime',category:'System',name:'Date & Time',kind:'settings',title:'dateTime.title',back:'general',groups:[
+    [{k:'dateTime.twentyFourHourTime',toggle:false},{k:'dateTime.setAutomatically',toggle:true}],
+    [{k:'dateTime.timeZone',v:'New Orleans'},{k:'dateTime.dateFormat',v:'9/18/26'}]
+  ]},
+  {id:'messages',category:'Apple Apps',name:'Messages',kind:'messages',title:'messages.title',keys:['messages.search','messages.newMessage','messages.today','messages.yesterday','messages.noMessages']},
+  {id:'phone',category:'Apple Apps',name:'Phone',kind:'tabs',title:'phone.title',keys:['phone.favorites','phone.recents','phone.contacts','phone.keypad','phone.voicemail','phone.missed','phone.all']},
+  {id:'contacts',category:'Apple Apps',name:'Contacts',kind:'generic',title:'contacts.title',keys:['contacts.lists','contacts.search','contacts.addContact','contacts.myCard','contacts.contacts']},
+  {id:'mail',category:'Apple Apps',name:'Mail',kind:'mail',title:'mail.title',keys:['mail.mailboxes','mail.inbox','mail.vip','mail.flagged','mail.drafts','mail.sent','mail.junk','mail.trash','mail.search']},
+  {id:'photos',category:'Apple Apps',name:'Photos',kind:'photos',title:'photos.title',keys:['photos.library','photos.collections','photos.search','photos.years','photos.months','photos.all','photos.select']},
+  {id:'cameraApp',category:'Apple Apps',name:'Camera',kind:'generic',title:'cameraApp.title',keys:['cameraApp.photo','cameraApp.video','cameraApp.portrait','cameraApp.cinematic','cameraApp.slowMotion']},
+  {id:'maps',category:'Apple Apps',name:'Maps',kind:'generic',title:'maps.title',keys:['maps.search','maps.directions','maps.favorites','maps.recents','maps.guides']},
+  {id:'calendar',category:'Apple Apps',name:'Calendar',kind:'tabs',title:'calendar.title',keys:['calendar.today','calendar.calendars','calendar.inbox','calendar.search','calendar.addEvent']},
+  {id:'safari',category:'Apple Apps',name:'Safari',kind:'safari',title:'safari.title',keys:['safari.searchOrWebsite','safari.startPage','safari.favorites','safari.privacyReport','safari.readingList','safari.recentlyClosed']},
+  {id:'notes',category:'Apple Apps',name:'Notes',kind:'mail',title:'notes.title',keys:['notes.folders','notes.notes','notes.quickNotes','notes.recentlyDeleted','notes.search','notes.newNote']},
+  {id:'remindersApp',category:'Apple Apps',name:'Reminders',kind:'generic',title:'remindersApp.title',keys:['remindersApp.today','remindersApp.scheduled','remindersApp.all','remindersApp.flagged','remindersApp.completed','remindersApp.myLists']},
+  {id:'filesApp',category:'Apple Apps',name:'Files',kind:'generic',title:'filesApp.title',keys:['filesApp.browse','filesApp.recents','filesApp.shared','filesApp.onMyIPhone','filesApp.iCloudDrive','filesApp.downloads']},
+  {id:'weather',category:'Apple Apps',name:'Weather',kind:'weather',title:'weather.title',keys:['weather.myLocation','weather.conditions','weather.hourlyForecast','weather.tenDayForecast','weather.feelsLike','weather.humidity','weather.wind','weather.visibility']},
+  {id:'clock',category:'Apple Apps',name:'Clock',kind:'tabs',title:'clock.title',keys:['clock.worldClock','clock.alarm','clock.stopwatch','clock.timer','clock.sleep']},
+  {id:'calculator',category:'Apple Apps',name:'Calculator',kind:'generic',title:'calculator.title',keys:['calculator.clear','calculator.percent','calculator.divide','calculator.multiply','calculator.subtract','calculator.add','calculator.equals']},
+  {id:'appStore',category:'Apple Apps',name:'App Store',kind:'tabs',title:'appStore.title',keys:['appStore.today','appStore.games','appStore.apps','appStore.arcade','appStore.search','appStore.updates']},
+  {id:'music',category:'Apple Apps',name:'Music',kind:'tabs',title:'music.title',keys:['music.listenNow','music.browse','music.radio','music.library','music.search','music.playlists']}
+];
+
+
+let english = {};
+let baseTranslations = { lou: {}, frc: {} };
+let lang = 'lou';
+let currentScreen = 'settings';
+let selectedKey = null;
+let previewMode = 'target';
+let drafts = { lou: {}, frc: {} };
+
+const $ = (id) => document.getElementById(id);
+const screenById = (id) => screens.find(s => s.id === id) || screens[0];
+const getDeep = (obj, key) => key.split('.').reduce((v,k) => (v && typeof v === 'object') ? v[k] : undefined, obj);
+const setDeep = (obj, key, value) => {
+  const parts = key.split('.'); let cur = obj;
+  parts.slice(0,-1).forEach(p => cur = cur[p] ||= {});
+  cur[parts.at(-1)] = value;
+};
+const mergeDeep = (base, overlay) => {
+  const out = structuredClone(base || {});
+  Object.entries(overlay || {}).forEach(([key,value]) => {
+    out[key] = value && typeof value === 'object' && !Array.isArray(value)
+      ? mergeDeep(out[key] || {}, value)
+      : value;
+  });
+  return out;
+};
+const blankShape = (source) => Object.fromEntries(Object.entries(source || {}).map(([key,value]) => [
+  key,
+  value && typeof value === 'object' && !Array.isArray(value) ? blankShape(value) : ''
+]));
+const flatten = (obj, prefix='', out={}) => {
+  Object.entries(obj || {}).forEach(([k,v]) => {
+    const key = prefix ? `${prefix}.${k}` : k;
+    if (v && typeof v === 'object') flatten(v,key,out); else out[key] = v;
+  });
+  return out;
+};
+const unflatten = (obj) => { const out={}; Object.entries(obj).forEach(([k,v])=>setDeep(out,k,v)); return out; };
+const storageKey = (code) => `ll-ios-localization-draft:${code}`;
+
+async function loadLocale(code) {
+  try {
+    const response = await fetch(`./locales/${code}/ui.json`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+function translatedValue(key, forceEnglish=false) {
+  const src = getDeep(english,key) ?? key;
+  if (forceEnglish || previewMode === 'english') return src;
+  const d = drafts[lang][key];
+  if (typeof d === 'string' && d.trim()) return d;
+  const base = getDeep(baseTranslations[lang],key);
+  return (typeof base === 'string' && base.trim()) ? base : src;
+}
+function isTranslated(key) {
+  const d = drafts[lang][key];
+  if (typeof d === 'string' && d.trim()) return true;
+  const base = getDeep(baseTranslations[lang],key);
+  return typeof base === 'string' && !!base.trim();
+}
+function tEl(key, cls='') {
+  const val = translatedValue(key);
+  const missing = previewMode !== 'english' && !isTranslated(key);
+  const status = missing ? ' title="Untranslated — showing English reference" data-untranslated="true"' : '';
+  return `<span class="translatable ${missing?'missing':''} ${selectedKey===key?'selected':''} ${cls}" data-key="${key}"${status}>${escapeHtml(val)}</span>`;
+}
+function escapeHtml(s='') { return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+
+function renderNav() {
+  const q = $('screenSearch').value.trim().toLowerCase();
+  const grouped = {};
+  screens.filter(s=>!q || s.name.toLowerCase().includes(q)).forEach(s => (grouped[s.category] ||= []).push(s));
+  $('screenNav').innerHTML = Object.entries(grouped).map(([cat,list]) => `
+    <div class="nav-group"><div class="nav-group-title">${cat}</div>
+      ${list.map(s=>`<button class="screen-button ${s.id===currentScreen?'active':''}" data-screen="${s.id}"><span>${escapeHtml(s.name)}</span><small>${screenProgress(s)}%</small></button>`).join('')}
+    </div>`).join('');
+  document.querySelectorAll('[data-screen]').forEach(b=>b.onclick=()=>{currentScreen=b.dataset.screen;selectedKey=null;renderAll();});
+  $('screenPicker').innerHTML = screens.map(s=>`<option value="${s.id}">${escapeHtml(s.name)}</option>`).join('');
+  $('screenPicker').value = currentScreen;
+}
+
+function screenKeys(s) {
+  const set = new Set([s.title]);
+  if (s.groups) s.groups.flat().forEach(r=>{if(r.k)set.add(r.k);if(r.h)set.add(r.h);if(r.vk)set.add(r.vk)});
+  (s.keys||[]).forEach(k=>set.add(k));
+  return [...set].filter(Boolean);
+}
+function screenProgress(s) { const keys=screenKeys(s); return keys.length?Math.round(keys.filter(isTranslated).length/keys.length*100):0; }
+function allKeys(){ return [...new Set(screens.flatMap(screenKeys))]; }
+
+function renderSettings(s) {
+  const back = s.back ? screenById(s.back) : null;
+  return `
+    <div class="ios-nav">
+      <div class="ios-back" ${back?`data-go="${back.id}"`:''}>${back?`‹ ${escapeHtml(back.name)}`:''}</div>
+      <div class="ios-nav-title">${s.id==='settings'?'':tEl(s.title)}</div><div></div>
+    </div>
+    ${s.id==='settings'?`<div class="large-title">${tEl(s.title)}</div><div class="ios-search">⌕ ${tEl('common.search')}</div>`:''}
+    ${s.groups.map(group=>`<div class="ios-group">
+      ${group[0]?.h ? `<div class="ios-header">${tEl(group[0].h)}</div>`:''}
+      <div class="ios-card">${group.map(r=>renderRow(r)).join('')}</div>
+    </div>`).join('')}`;
+}
+function renderRow(r){
+  const value = r.vk ? tEl(r.vk,'ios-value') : r.v ? `<span class="ios-value">${escapeHtml(r.v)}</span>` : '';
+  const toggle = typeof r.toggle === 'boolean' ? `<span class="toggle ${r.toggle?'on':''}"></span>` : '';
+  return `<div class="ios-row" ${r.to?`data-go="${r.to}"`:''}>${r.i?`<span class="ios-icon">${r.i}</span>`:''}<span class="ios-label" ${r.accent?'style="color:#0a84ff"':''}>${tEl(r.k)}</span>${value}${toggle}${(!r.toggle && !r.accent && !r.v && !r.vk)?'<span class="chevron">›</span>':''}</div>`;
+}
+function appNav(s, action=''){return `<div class="ios-nav"><div class="ios-back"></div><div class="ios-nav-title"></div><div class="ios-action">${action}</div></div><div class="app-body"><div class="app-title">${tEl(s.title)}</div>`;}
+function renderApp(s){
+  if(s.kind==='messages'){
+    return appNav(s,tEl('messages.newMessage'))+`<div class="ios-search">⌕ ${tEl('messages.search')}</div><div class="app-card">
+      ${['Sarah','Dad','Maya','Family'].map((n,i)=>`<div class="app-line"><strong>${n}</strong><div style="font-size:12px;color:#8e8e93;margin-top:3px">${i<2?tEl('messages.today'):tEl('messages.yesterday')} · ${i===0?'See you soon!':'Message preview'}</div></div>`).join('')}</div></div>`;
+  }
+  if(s.kind==='photos'){
+    return appNav(s,tEl('photos.select'))+`<div class="photo-grid">${['🌲','🌊','🌼','🏘️','☀️','🐕','🌉','🌾','🎷'].map(x=>`<div class="photo">${x}</div>`).join('')}</div><div class="tabbar">${['photos.library','photos.collections','photos.search'].map((k,i)=>`<div class="tabitem"><span>${['▦','◉','⌕'][i]}</span>${tEl(k)}</div>`).join('')}</div>`;
+  }
+  if(s.kind==='weather'){
+    return appNav(s)+`<div class="weather-hero"><div>${tEl('weather.myLocation')}</div><div class="weather-temp">78°</div><div>${tEl('weather.conditions')}</div></div><div class="app-card">${['weather.hourlyForecast','weather.tenDayForecast','weather.feelsLike','weather.humidity','weather.wind','weather.visibility'].map(k=>`<div class="app-line">${tEl(k)}</div>`).join('')}</div></div>`;
+  }
+  if(s.kind==='safari'){
+    return appNav(s)+`<div class="ios-search">⌕ ${tEl('safari.searchOrWebsite')}</div><div class="app-card">${['safari.startPage','safari.favorites','safari.privacyReport','safari.readingList','safari.recentlyClosed'].map(k=>`<div class="app-line">${tEl(k)}</div>`).join('')}</div></div>`;
+  }
+  if(s.kind==='tabs'){
+    const keys=s.keys.filter(k=>k!==s.title); return appNav(s)+`<div class="app-card">${keys.slice(-2).map(k=>`<div class="app-line">${tEl(k)}</div>`).join('')}</div><div class="tabbar">${keys.slice(0,5).map((k,i)=>`<div class="tabitem"><span>${['★','◷','♙','◌','◉'][i]||'•'}</span>${tEl(k)}</div>`).join('')}</div>`;
+  }
+  const keys=s.keys.filter(k=>k!==s.title);
+  const searchKey=keys.find(k=>k.endsWith('.search'));
+  return appNav(s)+(searchKey?`<div class="ios-search">⌕ ${tEl(searchKey)}</div>`:'')+`<div class="app-card">${keys.filter(k=>k!==searchKey).map(k=>`<div class="app-line">${tEl(k)} <span style="float:right;color:#c7c7cc">›</span></div>`).join('')}</div></div>`;
+}
+
+
+function renderPhone(){
+  const s=screenById(currentScreen); $('screenName').textContent=s.name;
+  $('phoneScreen').innerHTML=s.kind==='settings'?renderSettings(s):renderApp(s);
+  document.querySelectorAll('[data-key]').forEach(el=>el.onclick=(e)=>{e.stopPropagation();selectKey(el.dataset.key);});
+  document.querySelectorAll('[data-go]').forEach(el=>el.onclick=()=>{currentScreen=el.dataset.go;selectedKey=null;renderAll();});
+}
+function selectKey(key){selectedKey=key;renderPhone();renderEditor();}
+function renderEditor(){
+  if(!selectedKey){$('editorEmpty').classList.remove('hidden');$('editorForm').classList.add('hidden');return;}
+  $('editorEmpty').classList.add('hidden');$('editorForm').classList.remove('hidden');
+  $('fieldScreen').textContent=screenById(currentScreen).name;
+  $('fieldKey').textContent=selectedKey;
+  $('englishSource').textContent=getDeep(english,selectedKey)??selectedKey;
+  $('targetLabel').textContent=`${LANGS[lang].name} translation`;
+  const draft=drafts[lang][selectedKey]; const base=getDeep(baseTranslations[lang],selectedKey)||'';
+  $('translationInput').value=(typeof draft==='string'?draft:base);
+  $('fieldStatus').textContent=isTranslated(selectedKey)?'Translated':'Untranslated';
+  $('fieldStatus').classList.toggle('saved',isTranslated(selectedKey));
+}
+function renderProgress(){
+  const keys=allKeys(), done=keys.filter(isTranslated).length;
+  $('progressText').textContent=`${done} / ${keys.length} translated`;
+  $('progressFill').style.width=`${keys.length?done/keys.length*100:0}%`;
+  $('draftCount').textContent=Object.values(drafts[lang]).filter(v=>v&&v.trim()).length;
+}
+function renderAll(){renderNav();renderPhone();renderEditor();renderProgress();}
+function saveDraft(){
+  if(!selectedKey)return; drafts[lang][selectedKey]=$('translationInput').value.trim();
+  localStorage.setItem(storageKey(lang),JSON.stringify(drafts[lang])); toast('Draft saved in this browser'); renderAll();
+}
+function nextUntranslated(){
+  const keys=allKeys(); const start=Math.max(0,keys.indexOf(selectedKey));
+  for(let i=1;i<=keys.length;i++){const k=keys[(start+i)%keys.length];if(!isTranslated(k)){const s=screens.find(x=>screenKeys(x).includes(k));if(s)currentScreen=s.id;selectedKey=k;renderAll();return;}}
+  toast('Everything in this preview has a translation');
+}
+function buildExportJson(){
+  const merged=flatten(baseTranslations[lang]); Object.entries(drafts[lang]).forEach(([k,v])=>merged[k]=v);
+  return JSON.stringify(unflatten(merged),null,2)+'\n';
+}
+function exportJson(){
+  const blob=new Blob([buildExportJson()],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${lang}.json`;a.hidden=true;
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),0);
+  toast(`${LANGS[lang].name} draft JSON exported`);
+}
+function submitDraft(){
+  const changes=Object.entries(drafts[lang]).filter(([,v])=>v&&v.trim());
+  if(!changes.length){toast('Save at least one translation first');return;}
+  const lines=changes.map(([k,v])=>`- \`${k}\`\n  - English: ${getDeep(english,k)}\n  - Proposed: ${v}`);
+  const body=`## ${LANGS[lang].name} translation contribution\n\nSubmitted from the visual iOS localization preview.\n\n${lines.join('\n\n')}\n\nPlease review with a fluent/native speaker before merging.`;
+  const title=`${LANGS[lang].name} translation contribution (${changes.length} strings)`;
+  const url=`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body.slice(0,7000))}`;
+  window.open(url,'_blank','noopener');
+}
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2200);}
+
+async function init(){
+  const embeddedEnglish=mergeDeep(EMBEDDED_ENGLISH,ADDED_ENGLISH);
+  const [loadedEnglish,loadedLou,loadedFrc]=await Promise.all(['en','lou','frc'].map(loadLocale));
+  english=loadedEnglish || embeddedEnglish;
+  baseTranslations.lou=loadedLou || mergeDeep(blankShape(english),EMBEDDED_LOU);
+  baseTranslations.frc=loadedFrc || mergeDeep(blankShape(english),EMBEDDED_FRC);
+  for(const code of Object.keys(LANGS)){try{drafts[code]=JSON.parse(localStorage.getItem(storageKey(code))||'{}')}catch{drafts[code]={}}}
+  renderAll();
+  $('screenSearch').oninput=renderNav;
+  $('screenPicker').onchange=()=>{currentScreen=$('screenPicker').value;selectedKey=null;renderAll();};
+  document.querySelectorAll('#languageSwitcher button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;document.querySelectorAll('#languageSwitcher button').forEach(x=>x.classList.toggle('active',x===b));selectedKey=null;renderAll();});
+  $('targetMode').onclick=()=>{previewMode='target';$('targetMode').classList.add('active');$('englishMode').classList.remove('active');renderPhone();};
+  $('englishMode').onclick=()=>{previewMode='english';$('englishMode').classList.add('active');$('targetMode').classList.remove('active');renderPhone();};
+  $('translationInput').oninput=()=>{if(selectedKey){drafts[lang][selectedKey]=$('translationInput').value;localStorage.setItem(storageKey(lang),JSON.stringify(drafts[lang]));renderPhone();renderProgress();renderEditor();$('translationInput').focus();$('translationInput').selectionStart=$('translationInput').value.length;}};
+  $('saveBtn').onclick=saveDraft;
+  $('clearBtn').onclick=()=>{if(selectedKey){drafts[lang][selectedKey]='';$('translationInput').value='';saveDraft();}};
+  $('nextBtn').onclick=nextUntranslated;
+  $('exportBtn').onclick=exportJson;
+  $('submitBtn').onclick=submitDraft;
+  $('resetBtn').onclick=()=>{if(confirm(`Clear all ${LANGS[lang].name} drafts saved in this browser?`)){drafts[lang]={};localStorage.removeItem(storageKey(lang));renderAll();toast('Local drafts cleared');}};
+}
+init();
+
+  </script>
+</body>
+</html>

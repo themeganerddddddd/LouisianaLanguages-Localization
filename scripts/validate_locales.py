@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LOCALES = ROOT / "locales"
 SOURCE = LOCALES / "en" / "ui.json"
 TARGETS = [LOCALES / "lou" / "ui.json", LOCALES / "frc" / "ui.json"]
+JSON_FILES = sorted(ROOT.rglob("*.json"))
 
 PLACEHOLDER = re.compile(r"(\{\{[^{}]+\}\}|\{[A-Za-z0-9_.-]+\}|%[sdif])")
 
@@ -30,10 +31,24 @@ def flatten(obj, prefix=""):
     return out
 
 errors = []
-source = flatten(load(SOURCE))
+parsed = {}
+
+for json_path in JSON_FILES:
+    try:
+        parsed[json_path] = load(json_path)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        errors.append(f"{json_path.relative_to(ROOT)}: invalid JSON: {exc}")
+
+if errors:
+    print("Localization validation failed:")
+    for error in errors:
+        print(f"- {error}")
+    sys.exit(1)
+
+source = flatten(parsed[SOURCE])
 
 for target_path in TARGETS:
-    target = flatten(load(target_path))
+    target = flatten(parsed[target_path])
     missing = sorted(set(source) - set(target))
     extra = sorted(set(target) - set(source))
     if missing:
@@ -58,4 +73,7 @@ if errors:
         print(f"- {error}")
     sys.exit(1)
 
-print(f"Localization validation passed: {len(source)} source strings.")
+print(
+    f"Localization validation passed: {len(source)} source strings; "
+    f"{len(JSON_FILES)} JSON files parsed."
+)

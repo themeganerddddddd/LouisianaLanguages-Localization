@@ -4,11 +4,13 @@ on:
   pull_request:
     paths:
       - 'locales/**'
+      - 'apple-cldr/**/*.json'
       - 'scripts/validate_locales.py'
   push:
     branches: [main]
     paths:
       - 'locales/**'
+      - 'apple-cldr/**/*.json'
       - 'scripts/validate_locales.py'
 
 jobs:
