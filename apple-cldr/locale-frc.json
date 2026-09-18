@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "languageCode": "frc",
+    "languageNameEnglish": "Cajun French / Louisiana French",
+    "status": "draft"
+  },
+  "identity": {
+    "languageNameEnglish": "Cajun French / Louisiana French",
+    "autonym": "",
+    "defaultRegion": "Louisiana, United States",
+    "script": "Latin",
+    "direction": "ltr"
+  },
+  "characters": {
+    "mainExemplars": "",
+    "auxiliaryExemplars": "",
+    "punctuationExemplars": "",
+    "numberExemplars": "",
+    "notes": ""
+  },
+  "dates": {
+    "short": "",
+    "medium": "",
+    "long": "",
+    "firstDay": ""
+  },
+  "time": {
+    "cycle": "",
+    "am": "",
+    "pm": ""
+  },
+  "months": {
+    "wide": "",
+    "abbr": ""
+  },
+  "weekdays": {
+    "wide": "",
+    "abbr": ""
+  },
+  "numbers": {
+    "decimal": "",
+    "group": "",
+    "percent": "",
+    "minus": "",
+    "plus": ""
+  },
+  "currency": {
+    "code": "USD",
+    "symbol": "$",
+    "positive": "",
+    "negative": ""
+  },
+  "plurals": {
+    "cardinalCategories": "",
+    "cardinalRules": "",
+    "ordinalCategories": "",
+    "ordinalRules": ""
+  },
+  "grammar": {
+    "listTwo": "",
+    "listStart": "",
+    "listMiddle": "",
+    "listEnd": ""
+  },
+  "measurement": {
+    "system": "US",
+    "temperature": "",
+    "paper": "Letter",
+    "distance": "",
+    "height": ""
+  },
+  "display": {
+    "languageName": "",
+    "regionName": "",
+    "yes": "",
+    "no": "",
+    "on": "",
+    "off": "",
+    "unknown": ""
+  },
+  "review": {
+    "primarySources": "",
+    "communityOrganizations": "",
+    "reviewers": "",
+    "openQuestions": "",
+    "status": "",
+    "date": ""
+  }
+}

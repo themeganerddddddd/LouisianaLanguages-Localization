@@ -15,11 +15,12 @@ Open the public editor at:
 The editor lets contributors:
 
 - switch between Kouri-Vini and Louisiana French;
-- browse 30 system and app reference screens;
+- browse 79 broad iOS-style reference screens containing 864 English source strings;
 - select visible interface text and preview a translation immediately;
 - see English fallbacks clearly marked as untranslated;
 - keep drafts in their own browser;
-- export draft JSON or open a contribution issue in this repository.
+- edit locale and CLDR-readiness fields;
+- export draft data and follow official Apple Feedback Assistant or Unicode CLDR submission resources.
 
 The site is a static GitHub Pages project with no paid backend. It never writes directly to GitHub or stores a GitHub token in browser code.
 
@@ -43,6 +44,15 @@ The English source file is:
 - `locales/en/ui.json`
 
 Empty values mean **not translated yet**. The app should fall back to English until an approved translation is available.
+
+The broader iOS-style reference corpus used by the public mockup is stored separately in:
+
+- `ios-corpus/en.json`
+- `ios-corpus/lou.json`
+- `ios-corpus/frc.json`
+- `ios-corpus/screens.json`
+
+The same rule applies there: English is the source, and blank `lou` or `frc` values remain blank until a native/fluent contributor supplies and reviews them.
 
 For locale conventions, terminology, orthography, sources, and review records, work under:
 
@@ -99,12 +109,20 @@ context/
   ui-context.json
 
 apple-cldr/
+  locale-lou.json
+  locale-frc.json
   locale-data/{en,lou,frc}/locale.json
   terminology/{lou,frc}.json
   docs/
   review/
   submission/
   cldr/
+
+ios-corpus/
+  en.json
+  lou.json
+  frc.json
+  screens.json
 
 scripts/
   validate_locales.py
@@ -129,9 +147,11 @@ python scripts/validate_locales.py
 
 The validator checks that:
 - every JSON file in the repository parses;
-- target languages contain exactly the same keys as English;
+- app and iOS-corpus target languages contain exactly the same keys as English;
 - translation values are strings;
-- placeholder tokens stay consistent.
+- placeholder tokens stay consistent;
+- the iOS corpus contains 79 uniquely identified screens and 864 source strings;
+- every screen key resolves to the English corpus, with no orphaned source keys.
 
 ## Licensing
 
