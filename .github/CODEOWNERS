@@ -1,0 +1,5 @@
+# Replace/add reviewer GitHub usernames when the language review team is formed.
+# Keep maintainers as owners of the source file and automation.
+locales/en/ @themeganerddddddd
+scripts/ @themeganerddddddd
+.github/ @themeganerddddddd

@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "",
+    "backToHome": "",
+    "start": "",
+    "continue": "",
+    "done": "",
+    "locked": "",
+    "unit": "",
+    "lesson": "",
+    "review": "",
+    "dictionary": "",
+    "hub": "",
+    "mistakes": "",
+    "close": "",
+    "cancel": "",
+    "submit": "",
+    "new": "",
+    "learning": "",
+    "strong": "",
+    "mastered": ""
+  },
+  "languageSelect": {
+    "title": "",
+    "subtitle": "",
+    "frenchTitle": "",
+    "frenchSubtitle": "",
+    "kouriViniTitle": "",
+    "kouriViniSubtitle": ""
+  },
+  "loading": {
+    "learn": "",
+    "appName": ""
+  },
+  "home": {
+    "todaysPlan": "",
+    "continueToLesson": "",
+    "startNewLesson": "",
+    "allDone": "",
+    "catalogComplete": "",
+    "catalogCompleteDescription": "",
+    "noLessons": "",
+    "startHere": "",
+    "whereYouLeftOff": "",
+    "welcome": "",
+    "review": "",
+    "dictionary": "",
+    "hub": "",
+    "mistakes": "",
+    "mistakesNonePending": "",
+    "aboutMenu": "",
+    "tBoy": ""
+  },
+  "advanced": {
+    "frenchTitle": "",
+    "kouriViniTitle": ""
+  },
+  "dictionary": {
+    "frenchTitle": "",
+    "kouriViniTitle": "",
+    "subtitle": "",
+    "searchPlaceholder": "",
+    "allWords": "",
+    "playAudio": "",
+    "noMatches": "",
+    "audioMissingTitle": "",
+    "audioMissingMessage": "",
+    "audioErrorTitle": "",
+    "audioErrorMessage": ""
+  },
+  "dailyReview": {
+    "title": "",
+    "acrossAllUnits": ""
+  },
+  "lesson": {
+    "beforeYouBegin": "",
+    "sessionComplete": "",
+    "xpEarned": "",
+    "mistakesReviewed": "",
+    "backToHome": ""
+  },
+  "preface": {
+    "title": "",
+    "learnMore": "",
+    "startLesson": "",
+    "backToLesson": "",
+    "backToSummary": "",
+    "back": ""
+  },
+  "about": {
+    "aboutUs": "",
+    "acknowledgements": "",
+    "privacy": "",
+    "faq": "",
+    "support": "",
+    "dismissMenu": "",
+    "dismissModal": ""
+  },
+  "bugReport": {
+    "reportABug": "",
+    "title": "",
+    "name": "",
+    "namePlaceholder": "",
+    "email": "",
+    "emailPlaceholder": "",
+    "whatHappened": "",
+    "descriptionPlaceholder": "",
+    "shareDeviceInfo": "",
+    "weWillInclude": "",
+    "decline": "",
+    "sending": "",
+    "acceptAndSend": "",
+    "thanks": "",
+    "failedToOpenEmail": "",
+    "tryAgainOrEmail": "",
+    "genericError": "",
+    "phoneMakeModel": "",
+    "operatingSystem": "",
+    "osBuildId": "",
+    "appVersion": "",
+    "deviceType": "",
+    "appContext": ""
+  },
+  "settings": {
+    "title": "",
+    "interfaceLanguage": "",
+    "english": "",
+    "louisianaFrench": "",
+    "kouriVini": "",
+    "translationStatus": "",
+    "translationHelp": ""
+  }
+}

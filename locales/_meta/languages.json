@@ -1,0 +1,20 @@
+{
+  "source": {
+    "code": "en",
+    "name": "English"
+  },
+  "targets": [
+    {
+      "code": "lou",
+      "name": "Kouri-Vini / Louisiana Creole"
+    },
+    {
+      "code": "frc",
+      "name": "Louisiana French / Cajun French"
+    }
+  ],
+  "appCourseToUiLocale": {
+    "cajun": "frc",
+    "kreole": "lou"
+  }
+}

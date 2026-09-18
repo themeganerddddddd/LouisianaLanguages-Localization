@@ -1,0 +1,22 @@
+name: Validate localizations
+
+on:
+  pull_request:
+    paths:
+      - 'locales/**'
+      - 'scripts/validate_locales.py'
+  push:
+    branches: [main]
+    paths:
+      - 'locales/**'
+      - 'scripts/validate_locales.py'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/validate_locales.py

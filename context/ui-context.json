@@ -1,0 +1,38 @@
+{
+  "languageSelect.title": {
+    "screen": "LanguageSelect",
+    "description": "Main heading shown before the user picks which language course to study."
+  },
+  "languageSelect.subtitle": {
+    "screen": "LanguageSelect",
+    "description": "Short instruction under the language-selection heading."
+  },
+  "home.todaysPlan": {
+    "screen": "Home",
+    "description": "Heading for the learner's daily study plan."
+  },
+  "home.allDone": {
+    "screen": "Home",
+    "description": "Completion message after today's planned activities are finished."
+  },
+  "dictionary.searchPlaceholder": {
+    "screen": "Dictionary",
+    "description": "Placeholder inside the dictionary search field."
+  },
+  "about.aboutUs": {
+    "screen": "Home/About menu",
+    "description": "Heading for the About section."
+  },
+  "bugReport.reportABug": {
+    "screen": "Global bug report control",
+    "description": "Label on the control that opens the bug-report form."
+  },
+  "settings.interfaceLanguage": {
+    "screen": "Settings (planned)",
+    "description": "Label for choosing the language used by the app interface."
+  },
+  "settings.translationHelp": {
+    "screen": "Settings (planned)",
+    "description": "Link/button inviting speakers to contribute better translations."
+  }
+}

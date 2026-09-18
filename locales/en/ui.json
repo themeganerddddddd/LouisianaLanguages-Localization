@@ -1,0 +1,133 @@
+{
+  "common": {
+    "home": "Home",
+    "backToHome": "Back to Home",
+    "start": "Start",
+    "continue": "Continue",
+    "done": "Done",
+    "locked": "Locked",
+    "unit": "Unit",
+    "lesson": "Lesson",
+    "review": "Review",
+    "dictionary": "Dictionary",
+    "hub": "Hub",
+    "mistakes": "Mistakes",
+    "close": "Close",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "new": "New",
+    "learning": "Learning",
+    "strong": "Strong",
+    "mastered": "Mastered"
+  },
+  "languageSelect": {
+    "title": "Choose your language",
+    "subtitle": "Pick the language you want to begin with.",
+    "frenchTitle": "French",
+    "frenchSubtitle": "Louisiana French",
+    "kouriViniTitle": "Kouri-Vini",
+    "kouriViniSubtitle": "Louisiana Creole"
+  },
+  "loading": {
+    "learn": "Learn",
+    "appName": "Louisiana Languages"
+  },
+  "home": {
+    "todaysPlan": "Today's plan",
+    "continueToLesson": "Continue to lesson",
+    "startNewLesson": "Start your new lesson",
+    "allDone": "All done with today's plan! Practice more in the Hub",
+    "catalogComplete": "Catalog complete",
+    "catalogCompleteDescription": "You completed every Lesson in this Language.",
+    "noLessons": "No Lessons are available for this Language yet.",
+    "startHere": "START HERE",
+    "whereYouLeftOff": "WHERE YOU LEFT OFF",
+    "welcome": "Welcome! Let's learn new words.",
+    "review": "Review",
+    "dictionary": "Dictionary",
+    "hub": "Hub",
+    "mistakes": "Mistakes",
+    "mistakesNonePending": "Mistakes, none pending",
+    "aboutMenu": "About menu",
+    "tBoy": "T-Boy"
+  },
+  "advanced": {
+    "frenchTitle": "Advanced French Hub",
+    "kouriViniTitle": "Advanced Kouri-Vini Hub"
+  },
+  "dictionary": {
+    "frenchTitle": "French Dictionary",
+    "kouriViniTitle": "Kouri-Vini Dictionary",
+    "subtitle": "Browse every word introduced in the course",
+    "searchPlaceholder": "Search English, target word, or category",
+    "allWords": "All Words",
+    "playAudio": "Play audio",
+    "noMatches": "No matches found.",
+    "audioMissingTitle": "Audio missing",
+    "audioMissingMessage": "No local audio found for this word.",
+    "audioErrorTitle": "Audio error",
+    "audioErrorMessage": "Could not play this audio file."
+  },
+  "dailyReview": {
+    "title": "Daily Review",
+    "acrossAllUnits": "Across all units"
+  },
+  "lesson": {
+    "beforeYouBegin": "Before you begin",
+    "sessionComplete": "Session Complete 🎉",
+    "xpEarned": "XP earned",
+    "mistakesReviewed": "Mistakes reviewed",
+    "backToHome": "Back to Home"
+  },
+  "preface": {
+    "title": "A note before you begin",
+    "learnMore": "Learn more",
+    "startLesson": "Start lesson",
+    "backToLesson": "Back to lesson",
+    "backToSummary": "Back to summary",
+    "back": "< Back"
+  },
+  "about": {
+    "aboutUs": "About Us",
+    "acknowledgements": "Acknowledgements",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "support": "Support",
+    "dismissMenu": "Dismiss About menu",
+    "dismissModal": "Dismiss modal"
+  },
+  "bugReport": {
+    "reportABug": "Report a bug",
+    "title": "Tell us what went wrong.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "whatHappened": "What happened?",
+    "descriptionPlaceholder": "Describe the bug or issue…",
+    "shareDeviceInfo": "Share device info?",
+    "weWillInclude": "We will include:",
+    "decline": "Decline",
+    "sending": "Sending…",
+    "acceptAndSend": "Accept & send",
+    "thanks": "Merci! Report ready",
+    "failedToOpenEmail": "Failed to open email",
+    "tryAgainOrEmail": "Please try again or email us directly.",
+    "genericError": "Something went wrong. Please try again or email us directly.",
+    "phoneMakeModel": "Phone make and model",
+    "operatingSystem": "Operating system",
+    "osBuildId": "OS build ID",
+    "appVersion": "App version",
+    "deviceType": "Device type",
+    "appContext": "App context"
+  },
+  "settings": {
+    "title": "Settings",
+    "interfaceLanguage": "Interface language",
+    "english": "English",
+    "louisianaFrench": "Louisiana French",
+    "kouriVini": "Kouri-Vini",
+    "translationStatus": "Translation status",
+    "translationHelp": "Help improve this translation"
+  }
+}
