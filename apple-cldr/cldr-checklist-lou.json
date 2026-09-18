@@ -1,0 +1,840 @@
+{
+  "locale": "lou",
+  "items": [
+    {
+      "stage": "0. Setup",
+      "priority": "Required",
+      "key": "setup.submitterName",
+      "label": "Designate the primary submitter",
+      "help": "Name; organization/community affiliation if applicable.",
+      "who": "Project lead",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "0. Setup",
+      "priority": "Required",
+      "key": "setup.submitterEmail",
+      "label": "Submitter email",
+      "help": "Email Unicode can use for follow-up.",
+      "who": "Project lead",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "email",
+      "prefill": null
+    },
+    {
+      "stage": "0. Setup",
+      "priority": "Required",
+      "key": "setup.surveyAccess",
+      "label": "Get a CLDR Submitter ID / Survey Tool account",
+      "help": "Record the submitter ID/account request status for the relevant locale code; native speakers outside Unicode member organizations can request guest access.",
+      "who": "Each contributor/reviewer",
+      "source": "https://cldr.unicode.org/index/survey-tool/survey-tool-accounts",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "0. Setup",
+      "priority": "Required",
+      "key": "setup.rights",
+      "label": "Confirm contribution rights / Unicode license",
+      "help": "Confirm all submitted material is yours to contribute and is not proprietary/confidential; do not paste copyrighted dictionaries wholesale.",
+      "who": "Project lead",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "select:Yes|No|Needs review",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.languageCode",
+      "label": "Language code",
+      "help": "Use the registered language code.",
+      "who": "Project lead / standards check",
+      "source": "https://cldr.unicode.org/index/cldr-spec/picking-the-right-language-code",
+      "type": "text",
+      "prefill": "CODE"
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.englishLanguageName",
+      "label": "English language name",
+      "help": "The English name Unicode should use for the locale.",
+      "who": "Native speakers + standards check",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "text",
+      "prefill": "NAME"
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.scriptCode",
+      "label": "Script code",
+      "help": "Four-letter ISO 15924 script code, e.g. Latn.",
+      "who": "Language expert",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "text",
+      "prefill": "Latn"
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.regionCode",
+      "label": "Region code",
+      "help": "Region/country code for the default locale, typically the country with the largest user population.",
+      "who": "Language expert + demographic evidence",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "text",
+      "prefill": "US"
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.defaultContent",
+      "label": "Default content locale",
+      "help": "Usually language + default region/script as appropriate; confirm with CLDR guidance.",
+      "who": "CLDR / project lead",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.mainExemplars",
+      "label": "Main exemplar characters",
+      "help": "Unicode Set of characters required for normal writing.",
+      "who": "Native speakers / orthography expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.auxiliaryExemplars",
+      "label": "Auxiliary exemplar characters",
+      "help": "Unicode Set of less-common, borrowed-name, or secondary characters.",
+      "who": "Native speakers / orthography expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.numberExemplars",
+      "label": "Number exemplar characters",
+      "help": "Unicode Set used for numbers in the locale.",
+      "who": "Native speakers / locale expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.punctuationExemplars",
+      "label": "Punctuation exemplar characters",
+      "help": "Unicode Set of normal punctuation used by the language.",
+      "who": "Native speakers / orthography expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.populationData",
+      "label": "Verified country/user population data",
+      "help": "At least one country; ideally countries covering roughly 75%+ of language users. Focus on people who can use the written language. Include estimates/percentages only when supportable.",
+      "who": "Researcher + community experts",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.populationSources",
+      "label": "Population evidence / citations",
+      "help": "Cite census, linguistic surveys, academic/community sources supporting population/geography claims.",
+      "who": "Researcher",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.timeCycle",
+      "label": "Default time cycle",
+      "help": "One of h (1–12), H (0–23), k (1–24), or K (0–11) for the default content region.",
+      "who": "Native speakers / locale expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/core-data-for-new-locales",
+      "type": "select:h|H|k|K",
+      "prefill": null
+    },
+    {
+      "stage": "1. Core Data",
+      "priority": "Required",
+      "key": "core.basicCommitment",
+      "label": "Commitment to Basic coverage",
+      "help": "Agree to supply the Basic-level data during the next open CLDR submission cycle.",
+      "who": "Project lead",
+      "source": "https://docs.google.com/forms/d/e/1FAIpQLSfSyz0VUSXD93IJQQdjzUCnbQwC2nwz6eiLjTaFjASQZzpoSg/viewform",
+      "type": "select:Yes|No",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.quotationDelimiters",
+      "label": "Quotation delimiters",
+      "help": "Primary open/close quotation marks plus alternate/secondary open/close quotation marks. Enter all four clearly.",
+      "who": "Native speakers / orthography expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.defaultNumberingSystem",
+      "label": "Default numbering system",
+      "help": "Default numbering system used by the locale.",
+      "who": "Locale expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": "latn"
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Conditional",
+      "key": "basic.nativeNumberingSystem",
+      "label": "Native numbering system (if different)",
+      "help": "Only needed if the native numbering system differs from the default.",
+      "who": "Locale expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.localePatterns",
+      "label": "Locale pattern + separator + code pattern",
+      "help": "How language/script/region labels are combined and how codes are displayed.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.autonym",
+      "label": "Native name of the language",
+      "help": "How the language names itself in the language (autonym).",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.nameEnglish",
+      "label": "Native name for English",
+      "help": "How English is named in the target language.",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.scriptNames",
+      "label": "Native script name(s)",
+      "help": "Names of scripts customarily used to write the language.",
+      "who": "Native speakers / language expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.countryNames",
+      "label": "Country name(s)",
+      "help": "Native-language names for countries where the language is commonly used.",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.measurementSystem",
+      "label": "Measurement system",
+      "help": "US, metric, or UK.",
+      "who": "Locale expert / community review",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "select:US|metric|UK",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.months",
+      "label": "Full month names",
+      "help": "January through December, in normal locale use.",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.weekdays",
+      "label": "Full weekday names",
+      "help": "Monday through Sunday, in normal locale use.",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.amPm",
+      "label": "AM / PM names",
+      "help": "Localized day-period labels for AM and PM if used.",
+      "who": "Native speakers",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.dateFormats",
+      "label": "Date formats",
+      "help": "CLDR date patterns for appropriate widths (e.g. short/medium/long/full as prompted in Survey Tool).",
+      "who": "Locale expert + native review",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.timeFormats",
+      "label": "Time formats",
+      "help": "CLDR time patterns for appropriate widths.",
+      "who": "Locale expert + native review",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.intervalFallback",
+      "label": "Date/time interval fallback pattern",
+      "help": "Fallback pattern used when formatting a date/time interval.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.timezoneRegion",
+      "label": "Timezone region format",
+      "help": "Baseline timezone region formatting.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.gmtFormat",
+      "label": "GMT format",
+      "help": "General GMT formatting pattern.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.gmtZero",
+      "label": "GMT-zero format",
+      "help": "Formatting used for zero-offset GMT.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.timezoneHour",
+      "label": "Timezone hour format",
+      "help": "Positive/negative hour offset format.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.timezoneFallback",
+      "label": "Timezone fallback format",
+      "help": "Fallback format for combining timezone information.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.numberSymbols",
+      "label": "Number symbols",
+      "help": "Decimal separator, grouping separator, plus sign, minus sign, percent sign.",
+      "who": "Native speakers / locale expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.decimalPattern",
+      "label": "Decimal number pattern",
+      "help": "CLDR decimal-number pattern.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.currencyPattern",
+      "label": "Currency number pattern",
+      "help": "CLDR currency-number pattern.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.percentPattern",
+      "label": "Percent number pattern",
+      "help": "CLDR percent-number pattern.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "2. Basic Coverage",
+      "priority": "Required",
+      "key": "basic.scientificPattern",
+      "label": "Scientific number pattern",
+      "help": "CLDR scientific-number pattern.",
+      "who": "Locale expert / Survey Tool",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "text",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.cardinalPlurals",
+      "label": "Cardinal plural rules",
+      "help": "Determine CLDR plural categories and rules for ordinary numbers; include minimal-pair examples.",
+      "who": "Native speakers + linguist",
+      "source": "https://cldr.unicode.org/index/cldr-spec/plural-rules",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.ordinalPlurals",
+      "label": "Ordinal plural rules",
+      "help": "Determine ordinal categories/rules and minimal-pair examples, if the language distinguishes them.",
+      "who": "Native speakers + linguist",
+      "source": "https://cldr.unicode.org/index/cldr-spec/plural-rules",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.pluralPairs",
+      "label": "Plural minimal pairs",
+      "help": "Parallel example phrases where changing only the number forces the grammatical change.",
+      "who": "Native speakers + linguist",
+      "source": "https://cldr.unicode.org/index/cldr-spec/plural-rules",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.casing",
+      "label": "Casing information",
+      "help": "Capitalization/casing behavior for a cased script such as Latin.",
+      "who": "Language expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.collation",
+      "label": "Collation / sort order",
+      "help": "Normal alphabetic sorting order; note any special multi-character sequences or accent behavior.",
+      "who": "Native speakers / orthography expert",
+      "source": "https://cldr.unicode.org/index/cldr-spec/coverage-levels",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.reviewers",
+      "label": "Reviewer roster",
+      "help": "At least 2 trusted fluent/native reviewers where possible; record affiliations and dates.",
+      "who": "Project lead",
+      "source": "https://cldr.unicode.org/index/process",
+      "type": "textarea",
+      "prefill": null
+    },
+    {
+      "stage": "3. Strongly Recommended",
+      "priority": "Recommended",
+      "key": "recommended.sources",
+      "label": "Source bibliography",
+      "help": "Maintain a clean source list for spelling, orthography, usage, demography, dates/numbers, and disputed choices.",
+      "who": "Project lead / researchers",
+      "source": "https://cldr.unicode.org/requesting_changes",
+      "type": "textarea",
+      "prefill": null
+    }
+  ],
+  "answers": {
+    "setup.submitterName": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "setup.submitterEmail": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "setup.surveyAccess": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "setup.rights": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.languageCode": {
+      "value": "lou",
+      "status": "Done",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.englishLanguageName": {
+      "value": "Louisiana Creole / Kouri-Vini",
+      "status": "Done",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.scriptCode": {
+      "value": "Latn",
+      "status": "Needs Review",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.regionCode": {
+      "value": "US",
+      "status": "Needs Review",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.defaultContent": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.mainExemplars": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.auxiliaryExemplars": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.numberExemplars": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.punctuationExemplars": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.populationData": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.populationSources": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.timeCycle": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "core.basicCommitment": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.quotationDelimiters": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.defaultNumberingSystem": {
+      "value": "latn",
+      "status": "Needs Review",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.nativeNumberingSystem": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.localePatterns": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.autonym": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.nameEnglish": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.scriptNames": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.countryNames": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.measurementSystem": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.months": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.weekdays": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.amPm": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.dateFormats": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.timeFormats": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.intervalFallback": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.timezoneRegion": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.gmtFormat": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.gmtZero": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.timezoneHour": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.timezoneFallback": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.numberSymbols": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.decimalPattern": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.currencyPattern": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.percentPattern": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "basic.scientificPattern": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.cardinalPlurals": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.ordinalPlurals": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.pluralPairs": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.casing": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.collation": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.reviewers": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    },
+    "recommended.sources": {
+      "value": "",
+      "status": "Not Started",
+      "reviewerDate": "",
+      "notes": ""
+    }
+  }
+}

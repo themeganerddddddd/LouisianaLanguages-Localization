@@ -19,7 +19,7 @@ The editor lets contributors:
 - select visible interface text and preview a translation immediately;
 - see English fallbacks clearly marked as untranslated;
 - keep drafts in their own browser;
-- edit locale and CLDR-readiness fields;
+- work through the CLDR-readiness stages: Setup, Core Data, Basic Coverage, and Strongly Recommended;
 - export draft data and follow official Apple Feedback Assistant or Unicode CLDR submission resources.
 
 The site is a static GitHub Pages project with no paid backend. It never writes directly to GitHub or stores a GitHub token in browser code.
@@ -69,6 +69,13 @@ The separate `apple-cldr/` layer collects human-readable evidence and reviewed l
 
 The JSON files in `apple-cldr/locale-data/` are the canonical human-friendly collection layer. They are not fabricated CLDR XML and do not claim that Apple or Unicode has accepted either locale. See `apple-cldr/README.md` and `apple-cldr/cldr/README.md`.
 
+The browser worksheet mirrors the CLDR working checklist row-for-row. Its committed starting points are:
+
+- `apple-cldr/cldr-checklist-lou.json`
+- `apple-cldr/cldr-checklist-frc.json`
+
+Each row records its value, status, reviewer/date, notes, and official source. Existing v2 browser locale data is migrated into matching worksheet rows as `Needs Review` where possible.
+
 ## Important app compatibility rule
 
 The existing Louisiana Languages learning app currently uses internal content/storage identifiers such as `cajun` and `kreole`.
@@ -111,6 +118,8 @@ context/
 apple-cldr/
   locale-lou.json
   locale-frc.json
+  cldr-checklist-lou.json
+  cldr-checklist-frc.json
   locale-data/{en,lou,frc}/locale.json
   terminology/{lou,frc}.json
   docs/
@@ -151,7 +160,8 @@ The validator checks that:
 - translation values are strings;
 - placeholder tokens stay consistent;
 - the iOS corpus contains 79 uniquely identified screens and 864 source strings;
-- every screen key resolves to the English corpus, with no orphaned source keys.
+- every screen key resolves to the English corpus, with no orphaned source keys;
+- both CLDR checklists contain the four expected stages, complete answer records, valid statuses, and official source links.
 
 ## Licensing
 

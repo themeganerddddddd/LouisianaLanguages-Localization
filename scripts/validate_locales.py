@@ -3,6 +3,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES = ROOT / "locales"
@@ -12,9 +13,34 @@ IOS_CORPUS = ROOT / "ios-corpus"
 IOS_SOURCE = IOS_CORPUS / "en.json"
 IOS_TARGETS = [IOS_CORPUS / "lou.json", IOS_CORPUS / "frc.json"]
 IOS_SCREENS = IOS_CORPUS / "screens.json"
+CLDR_CHECKLISTS = [
+    ROOT / "apple-cldr" / "cldr-checklist-lou.json",
+    ROOT / "apple-cldr" / "cldr-checklist-frc.json",
+]
 JSON_FILES = sorted(ROOT.rglob("*.json"))
 
 PLACEHOLDER = re.compile(r"(\{\{[^{}]+\}\}|\{[A-Za-z0-9_.-]+\}|%[sdif])")
+CLDR_STAGES = [
+    "0. Setup",
+    "1. Core Data",
+    "2. Basic Coverage",
+    "3. Strongly Recommended",
+]
+CLDR_ITEM_FIELDS = {
+    "stage",
+    "priority",
+    "key",
+    "label",
+    "help",
+    "who",
+    "source",
+    "type",
+    "prefill",
+}
+CLDR_ANSWER_FIELDS = {"value", "status", "reviewerDate", "notes"}
+CLDR_STATUSES = {"Not Started", "In Progress", "Needs Review", "Done"}
+CLDR_PRIORITIES = {"Required", "Conditional", "Recommended"}
+CLDR_SOURCE_HOSTS = {"cldr.unicode.org", "docs.google.com"}
 
 def load(path):
     with path.open("r", encoding="utf-8") as f:
@@ -161,6 +187,145 @@ def validate_ios_screens(source):
             + ", ".join(unreferenced_source_keys)
         )
 
+
+def validate_cldr_checklists():
+    reference_items = None
+    item_count = 0
+
+    for checklist_path in CLDR_CHECKLISTS:
+        relative_path = checklist_path.relative_to(ROOT)
+        checklist = parsed[checklist_path]
+        if not isinstance(checklist, dict):
+            errors.append(f"{relative_path}: root must be an object")
+            continue
+
+        expected_locale = checklist_path.stem.rsplit("-", 1)[-1]
+        if checklist.get("locale") != expected_locale:
+            errors.append(
+                f"{relative_path}: locale must be {expected_locale!r}"
+            )
+
+        items = checklist.get("items")
+        answers = checklist.get("answers")
+        if not isinstance(items, list):
+            errors.append(f"{relative_path}: items must be an array")
+            continue
+        if not isinstance(answers, dict):
+            errors.append(f"{relative_path}: answers must be an object")
+            continue
+
+        item_count = len(items)
+        if item_count != 49:
+            errors.append(f"{relative_path}: expected 49 items, found {item_count}")
+
+        item_keys = []
+        stages = []
+        for index, item in enumerate(items):
+            location = f"{relative_path}:items[{index}]"
+            if not isinstance(item, dict):
+                errors.append(f"{location}: item must be an object")
+                continue
+
+            missing_fields = sorted(CLDR_ITEM_FIELDS - set(item))
+            extra_fields = sorted(set(item) - CLDR_ITEM_FIELDS)
+            if missing_fields:
+                errors.append(
+                    f"{location}: missing fields: {', '.join(missing_fields)}"
+                )
+            if extra_fields:
+                errors.append(
+                    f"{location}: unexpected fields: {', '.join(extra_fields)}"
+                )
+
+            for field in ("stage", "priority", "key", "label", "help", "who", "source", "type"):
+                if not isinstance(item.get(field), str) or not item[field]:
+                    errors.append(f"{location}.{field}: must be a non-empty string")
+
+            stage = item.get("stage")
+            if stage not in CLDR_STAGES:
+                errors.append(f"{location}.stage: unexpected stage {stage!r}")
+            elif stage not in stages:
+                stages.append(stage)
+
+            priority = item.get("priority")
+            if priority not in CLDR_PRIORITIES:
+                errors.append(f"{location}.priority: invalid value {priority!r}")
+
+            key = item.get("key")
+            if isinstance(key, str) and key:
+                item_keys.append(key)
+
+            source_url = item.get("source")
+            if isinstance(source_url, str):
+                parsed_url = urlparse(source_url)
+                if (
+                    parsed_url.scheme != "https"
+                    or parsed_url.hostname not in CLDR_SOURCE_HOSTS
+                ):
+                    errors.append(
+                        f"{location}.source: expected an official HTTPS CLDR source"
+                    )
+
+        if stages != CLDR_STAGES:
+            errors.append(
+                f"{relative_path}: expected stages in order: {', '.join(CLDR_STAGES)}"
+            )
+
+        duplicate_keys = sorted(
+            key for key in set(item_keys) if item_keys.count(key) > 1
+        )
+        if duplicate_keys:
+            errors.append(
+                f"{relative_path}: duplicate item keys: {', '.join(duplicate_keys)}"
+            )
+
+        missing_answers = sorted(set(item_keys) - set(answers))
+        extra_answers = sorted(set(answers) - set(item_keys))
+        if missing_answers:
+            errors.append(
+                f"{relative_path}: missing answers: {', '.join(missing_answers)}"
+            )
+        if extra_answers:
+            errors.append(
+                f"{relative_path}: extra answers: {', '.join(extra_answers)}"
+            )
+
+        for key in sorted(set(item_keys) & set(answers)):
+            answer = answers[key]
+            location = f"{relative_path}:answers.{key}"
+            if not isinstance(answer, dict):
+                errors.append(f"{location}: answer must be an object")
+                continue
+
+            missing_fields = sorted(CLDR_ANSWER_FIELDS - set(answer))
+            extra_fields = sorted(set(answer) - CLDR_ANSWER_FIELDS)
+            if missing_fields:
+                errors.append(
+                    f"{location}: missing fields: {', '.join(missing_fields)}"
+                )
+            if extra_fields:
+                errors.append(
+                    f"{location}: unexpected fields: {', '.join(extra_fields)}"
+                )
+
+            for field in CLDR_ANSWER_FIELDS:
+                if field in answer and not isinstance(answer[field], str):
+                    errors.append(f"{location}.{field}: must be a string")
+
+            if answer.get("status") not in CLDR_STATUSES:
+                errors.append(
+                    f"{location}.status: invalid value {answer.get('status')!r}"
+                )
+
+        if reference_items is None:
+            reference_items = items
+        elif items != reference_items:
+            errors.append(
+                f"{relative_path}: item definitions differ from the other locale"
+            )
+
+    return item_count
+
 errors = []
 parsed = {}
 
@@ -179,6 +344,7 @@ if errors:
 source = validate_targets(SOURCE, TARGETS)
 ios_source = validate_targets(IOS_SOURCE, IOS_TARGETS)
 validate_ios_screens(ios_source)
+cldr_item_count = validate_cldr_checklists()
 
 if len(ios_source) != 864:
     errors.append(
@@ -195,5 +361,6 @@ print(
     f"Localization validation passed: {len(source)} app source strings, "
     f"{len(ios_source)} iOS corpus source strings across "
     f"{len(parsed[IOS_SCREENS])} reference screens; "
+    f"{cldr_item_count} CLDR checklist rows per locale; "
     f"{len(JSON_FILES)} JSON files parsed."
 )
